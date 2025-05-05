@@ -14,4 +14,4 @@ COPY . .
 RUN pip install uvicorn
 
 EXPOSE 8000
-CMD ["uvicorn", "yet_another_todo.app:app", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["uvicorn", "yet_another_todo_backend.app:app", "--host", "0.0.0.0", "--port", "8000"]

@@ -7,9 +7,7 @@ from yet_another_todo_backend.config import settings
 app = FastAPI()
 
 
-origins = [
-    settings.frontend_url,  # <--- главный домен, где сидит фронт
-]
+origins = ['*']
 app.add_middleware(
     CORSMiddleware,
     allow_origins=origins,
@@ -54,4 +52,4 @@ async def get_data_folder():
 
 
 if __name__ == "__main__":
-    uvicorn.run("app:app", host="0.0.0.0", port=8000, reload=True)
+    uvicorn.run("yet_another_todo_backend.app:app", host="0.0.0.0", port=8000, reload=True)
